@@ -1,6 +1,15 @@
 const toggleBtn = document.getElementById("lightToggleBtn");
-const lightImg = document.querySelector(".light-bulb");
+let lightImg = document.querySelector(".light-bulb");
 
 toggleBtn.addEventListener('click', function () {
-    lightImg.src = "./img/yellow_lamp.png";
+    if (lightImg.src.includes("white_lamp.png")) {
+        toggleBtn.innerText = "Spegni";
+        lightImg.src = "./img/yellow_lamp.png";
+        console.log(lightImg);
+
+    } else {
+        toggleBtn.innerText = "Accendi";
+        lightImg.src = "./img/white_lamp.png";
+        console.log(lightImg);
+    }
 })
